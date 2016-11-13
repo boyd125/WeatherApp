@@ -16,7 +16,9 @@ def main():
 
     #Gets the current time and formats it like 02:00pm
     time = TimeConverter.current_time()
-
+    
+    
+    
     sunset_time = TimeConverter.time_convert(weather['sys']['sunset'])
     sunrise_time = TimeConverter.time_convert(weather['sys']['sunrise'])
 
@@ -31,7 +33,11 @@ def main():
 
     tempC = TempConverter.convertKtoC(temperature)
     print ('Current temperature in Celsius: %.2f C' % tempC)
-
+    
+    description = weather['weather'][0]['description']
+    print ('Sky description: ' + description)
+    
+    
     minTemperature = weather['main']['temp_min']
     minTempF = TempConverter.convertKtoF(minTemperature)
     print ('Lows today are: %.2f F' % minTempF)
